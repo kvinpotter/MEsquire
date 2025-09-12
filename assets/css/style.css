@@ -293,7 +293,7 @@ img {
 
 /*** back to top **/
 .back-to-top {
-  background-color: rgba(201, 179, 140, 0.7);
+  background-color: rgba(156, 146, 136, 0.7);
   width: 45px;
   height: 45px;
   line-height: 45px;
@@ -321,7 +321,7 @@ img {
 }
 
 .back-to-top:hover {
-  background-color: #c9b38c;
+  background-color: #9c9288;
 }
 
 .back-to-top i {
@@ -5328,7 +5328,7 @@ img {
 
 .cta-section-s2:before {
   content: "";
-  background: #c9b38c;
+  background: #9c9288;
   width: 100%;
   height: 100%;
   position: absolute;
