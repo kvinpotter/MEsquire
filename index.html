@@ -30,10 +30,80 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        /* Overlay background */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Popup box */
+        .popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 450px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Bigger Image */
+        .popup img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        /* Text */
+        .popup h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        /* Close button */
+        .popup button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #c9b38c;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background: #ad9c7e;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+    </style>
+</head>
 
 </head>
 
 <body>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popup">
+    <div class="popup">
+        <img src="assets/images/about1.jpg" alt="Welcome Image">
+        <h3>Welcome to Malosha Esquire</h3>
+        <h4>Straight talk and clear solutions </h4>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
 
     <!-- start page-wrapper -->
     <div class="page-wrapper">
@@ -678,6 +748,17 @@
             anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
         });
+    </script>
+    <script>
+        // Show popup when page loads
+        window.onload = function() {
+            document.getElementById("popup").style.display = "flex";
+        };
+
+        // Close popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
     </script>
 
     <!-- Plugins for this template -->
