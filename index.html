@@ -30,6 +30,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
     <style>
         /* Overlay background */
         .popup-overlay {
@@ -46,31 +47,37 @@
         /* Popup box */
         .popup {
             background: #fff;
-            padding: 20px;
+            padding: 5%;
             border-radius: 15px;
             text-align: center;
-            max-width: 450px;
+            width: 90%;
+            max-width: 700px; /* wider popup for big screens */
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             animation: fadeIn 0.4s ease;
         }
 
-        /* Bigger Image */
+        /* Responsive & scalable Image */
         .popup img {
-            max-width: 400px;
+            width: 90%;
+            max-width: 500px; /* bigger image on desktops */
+            height: auto;
             margin-bottom: 20px;
         }
 
         /* Text */
         .popup h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin: 10px 0;
             color: #333;
+            white-space: nowrap; /* prevents text from breaking into two lines */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Close button */
         .popup button {
-            margin-top: 15px;
-            padding: 10px 20px;
+            margin-top: 20px;
+            padding: 12px 25px;
             border: none;
             background: #c9b38c;
             color: white;
@@ -88,6 +95,26 @@
             from {opacity: 0; transform: scale(0.9);}
             to {opacity: 1; transform: scale(1);}
         }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            .popup {
+                width: 95%;
+                padding: 8%;
+            }
+            .popup img {
+                width: 100%;
+                max-width: 280px; /* smaller on phones */
+            }
+            .popup h2 {
+                font-size: 1.2rem;
+                white-space: normal; /* allow wrap on small screens */
+            }
+            .popup button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -99,8 +126,8 @@
     <div class="popup-overlay" id="popup">
     <div class="popup">
         <img src="assets/images/about1.jpg" alt="Welcome Image">
-        <h3>Welcome to Malosha Esquire</h3>
-        <h4>Straight talk and clear solutions </h4>
+        <h2>Welcome to Malosha Esquire</h2>
+        <h3>Straight talk and clear solutions </h3>
         <button onclick="closePopup()">Close</button>
     </div>
 </div>
