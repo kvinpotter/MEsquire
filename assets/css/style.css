@@ -4904,6 +4904,7 @@ img {
 
 .service-section-s2 .service-grids .grid {
   background: #fff;
+  min-height: 200px;
   width: calc(16.66% - 30px);
   float: left;
   text-align: center;
